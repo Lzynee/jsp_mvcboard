@@ -4,6 +4,8 @@
 
 package mvcboard;
 
+import utils.BoardPage;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -60,7 +62,7 @@ public class ListController extends HttpServlet {
         // 뷰에 전달할 매개변수 추가
         String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
                 blockPage, pageNum, "../MVCBoard/List.do");
-        
+
         map.put("pagingImg", pagingImg);  // 바로가기 영역 HTML 문자열
         map.put("totalCount", totalCount);  // 게시물 개수
         map.put("pageSize", pageSize);  // 페이지당 게시물 수
