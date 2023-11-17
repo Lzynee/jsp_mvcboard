@@ -1,4 +1,4 @@
-<%@ page import="mvcboard.MVCBoardDAO" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: sec
   Date: 2023-11-17
