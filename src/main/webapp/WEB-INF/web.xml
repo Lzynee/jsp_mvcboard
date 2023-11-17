@@ -37,7 +37,7 @@
   </context-param>
   <!-- 페이징 설정값 추가 완료 (22:57) -->
 
-  <!-- Nov 17. 2023. 22:27 추가 : 목록에 대한 매핑 -->
+  <!-- Nov 17. 2023. 22:27 추가 : 목록 보기 기능에 대한 매핑 -->
   <!-- 서블릿 이름과 클래스 -->
   <servlet>
     <servlet-name>MVCBoardList</servlet-name>
@@ -49,4 +49,34 @@
     <url-pattern>/mvcboard/list.do</url-pattern>
   </servlet-mapping>
   <!-- 목록에 대한 매핑 수정 끝 (22:31) -->
+
+  <!-- Nov 18. 2023. 00:26 추가 : 글쓰기, 상세 보기, 다운로드 기능에 대한 매핑 -->
+  <!-- 글쓰기 서블릿 매핑 -->
+  <servlet>
+    <servlet-name>MVCBoardWrite</servlet-name>
+    <servlet-class>mvcboard.WriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MVCBoardWrite</servlet-name>
+    <url-pattern>/mvcboard/write.do</url-pattern>
+  </servlet-mapping>
+  <!-- 상세 보기 서블릿 매핑 -->
+  <servlet>
+    <servlet-name>MVCBoardView</servlet-name>
+    <servlet-class>mvcboard.ViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MVCBoardView</servlet-name>
+    <url-pattern>/mvcboard/view.do</url-pattern>
+  </servlet-mapping>
+  <!-- 다운로드 서블릿 매핑 -->
+  <servlet>
+    <servlet-name>MVCBoardDownload</servlet-name>
+    <servlet-class>mvcboard.DownloadController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MVCBoardDownload</servlet-name>
+    <url-pattern>/mvcboard/download.do</url-pattern>
+  </servlet-mapping>
+  <!-- 서블릿 매핑 끝 (00:36) -->
 </web-app>
