@@ -23,6 +23,20 @@
     <param-name>MariaPwd</param-name>
     <param-value>12345</param-value>
   </context-param>
+
+  <!-- Nov 17. 2023. 22:55 추가 : 페이징 설정값 -->
+  <!-- 한 페이지에 출력할 게시물의 개수 설정 -->
+  <context-param>
+    <param-name>POSTS_PER_PAGE</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <!-- 한 화면에 출력할 페이지 번호의 개수 설정 -->
+  <context-param>
+    <param-name>PAGES_PER_BLOCK</param-name>
+    <param-value>5</param-value>
+  </context-param>
+  <!-- 페이징 설정값 추가 완료 (22:57) -->
+
   <!-- Nov 17. 2023. 22:27 추가 : 목록에 대한 매핑 -->
   <!-- 서블릿 이름과 클래스 -->
   <servlet>
