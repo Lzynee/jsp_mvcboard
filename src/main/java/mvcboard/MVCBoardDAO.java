@@ -1,3 +1,7 @@
+/**
+ * mvcboard 테이블의 데이터에 관해 기능을 수행
+ * */
+
 package mvcboard;
 
 import common.DBConnPool;
@@ -11,6 +15,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         super();
     }
 
+    /* R(Read) - 목록 읽기 기능 구현 */
     // 검색 조건에 맞는 게시물의 개수를 반환한다 (페이징 x)
     public int selectCount(Map<String, Object> map) {
         int totalCount = 0;

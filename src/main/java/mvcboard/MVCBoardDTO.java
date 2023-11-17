@@ -1,3 +1,7 @@
+/**
+ * mvcboard 테이블에 대응하는 클래스
+ * */
+
 package mvcboard;
 
 import lombok.Getter;
