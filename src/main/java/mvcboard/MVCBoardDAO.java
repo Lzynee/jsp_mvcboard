@@ -46,7 +46,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
 
     // 검색 조건에 맞는 게시물 목록을 반환한다 (페이징)
     public List<MVCBoardDTO> selectListPage(Map<String, Object> map) {
-        List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
+        List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();  // 결과(게시물 목록)를 담을 변수
 
         // 쿼리문 준비
         String query = " "
@@ -64,6 +64,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
                 " WHERE ROWNUM BETWEEN ? AND ? ;";  // 게시물 구간은 인파라미터로 설정
 
         try {
+            // 쿼리문 완성
             psmt = con.prepareStatement(query);  // 동적 쿼리문 생성
             psmt.setString(1, map.get("start").toString());  // 인파라미터 설정
             psmt.setString(2, map.get("end").toString());
@@ -71,6 +72,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
 
             // 반환된 게시물 목록을 List 컬렉션에 추가
             while (rs.next()) {
+                // 한 행(게시물 하나)의 데이터를 DTO에 저장
                 MVCBoardDTO dto = new MVCBoardDTO();
 
                 dto.setIdx(rs.getString(1));
@@ -84,6 +86,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
                 dto.setPass(rs.getString(9));
                 dto.setVisitcount(rs.getInt(10));
 
+                // 반환할 결과 목록에 게시물 추가
                 board.add(dto);
             }
 
