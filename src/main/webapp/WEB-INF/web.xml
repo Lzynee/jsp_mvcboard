@@ -23,4 +23,16 @@
     <param-name>MariaPwd</param-name>
     <param-value>12345</param-value>
   </context-param>
+  <!-- Nov 17. 2023. 22:27 추가 : 목록에 대한 매핑 -->
+  <!-- 서블릿 이름과 클래스 -->
+  <servlet>
+    <servlet-name>MVCBoardList</servlet-name>
+    <servlet-class>mvcboard.ListController</servlet-class>
+  </servlet>
+  <!-- 서블릿 이름과 요청명 -->
+  <servlet-mapping>
+    <servlet-name>MVCBoardList</servlet-name>
+    <url-pattern>/mvcboard/list.do</url-pattern>
+  </servlet-mapping>
+  <!-- 목록에 대한 매핑 수정 끝 (22:31) -->
 </web-app>
