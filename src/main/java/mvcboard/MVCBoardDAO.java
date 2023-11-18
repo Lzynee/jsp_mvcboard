@@ -1,5 +1,11 @@
 /**
  * mvcboard 테이블의 데이터에 관해 기능을 수행
+ * 해당 파일 내에서 정의하는 메소드
+ * 1. selectCount() : 목록 읽기 기능; 검색 조건에 맞는 게시물의 개수를 반환
+ * 2. selectListPage() : 목록 읽기 기능; 페이징 기능
+ * 3. insertWrite() : 글쓰기 기능
+ * 4. selectView() : 상세 보기 기능 - 주어진 일련번호에 해당하는 게시물을 DTO로 반환
+ * 5. () : 상세 보기 기능 - 조회수를 증가시킨다.
  * */
 
 package mvcboard;
@@ -131,4 +137,54 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         return result;
     }
 
+    /* R(Read) : 주어진 일련번호에 해당하는 게시물을 DTO로 반환한다. */
+    // 일련번호로 게시물 조회
+    public MVCBoardDTO selectView(String idx) {
+        MVCBoardDTO dto = new MVCBoardDTO();  // DTO 객체 생성
+        String query = "SELECT * FROM mvcboard WHERE idx=?";  // 쿼리문 템플릿 준비
+
+        try {
+            psmt = con.prepareStatement(query);  // 쿼리문 준비
+            psmt.setString(1, idx);  // 인파라미터 설정
+            rs = psmt.executeQuery();  // 쿼리문 실행
+
+            // 결과를 DTO 객체에 저장
+            if (rs.next()) {
+                dto.setIdx(rs.getString(1));
+                dto.setName(rs.getString(2));
+                dto.setTitle(rs.getString(3));
+                dto.setContent(rs.getString(4));
+                dto.setPostdate(rs.getDate(5));
+                dto.setOfile(rs.getString(6));
+                dto.setSfile(rs.getString(7));
+                dto.setDowncount(rs.getInt(8));
+                dto.setPass(rs.getString(9));
+                dto.setVisitcount(rs.getInt(10));
+            }
+
+        } catch (Exception e) {
+            System.out.println("게시물 상세보기 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        return dto;  // 결과 반환
+    }  // selectView()
+
+    // 주어진 일련번호에 해당하는 게시물의 조회수를 1 증가시킨다.
+    public void updateVisitCount(String idx) {
+        String query = "UPDATE mvcboard SET "
+                + " visitcount=visitcount+1 "
+                + " WHERE idx=?";
+
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, idx);
+            psmt.executeQuery();
+
+        } catch (Exception e) {
+            System.out.println("게시물 조회수 증가 중 예외 발생");
+            e.printStackTrace();
+        }
+
+    }  // updateVisitCount()
 }  // class
