@@ -55,7 +55,13 @@
   <servlet>
     <servlet-name>MVCBoardWrite</servlet-name>
     <servlet-class>mvcboard.WriteController</servlet-class>
+    <!-- Nov 19. 2023. 03:13 추가 : 글쓰기 기능 매핑 수정 - 파일 업로드에 사용할 Multipart 설정 -->
+    <multipart-config>
+      <max-file-size>1048576</max-file-size>  <!-- 1MB -->
+      <max-request-size>10485760</max-request-size>  <!-- 10MB -->
+    </multipart-config>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>MVCBoardWrite</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
