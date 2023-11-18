@@ -31,7 +31,7 @@ public class WriteController extends HttpServlet {
 
         // 1. 파일 업로드 처리 =======================================================
         // 업로드 디렉터리의 물리적 경로 확인
-        String saveDirectory = req.getServletContext().getRealPath("/Uplaods");
+        String saveDirectory = req.getServletContext().getRealPath("/Uploads");
 
         // FileUtil.uploadFile() 메소드를 호출하여 파일 업로드
         String originalFileName = "";
@@ -50,6 +50,7 @@ public class WriteController extends HttpServlet {
         // 2. 파일 업로드 외 처리 =====================================================
         // 파일을 제외한 나머지 폼값을 DTO에 저장
         MVCBoardDTO dto = new MVCBoardDTO();
+
         dto.setName(req.getParameter("name"));
         dto.setTitle(req.getParameter("title"));
         dto.setContent(req.getParameter("content"));

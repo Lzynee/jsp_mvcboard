@@ -15,7 +15,7 @@
   </context-param>
   <!-- 계정 아이디 -->
   <context-param>
-    <param-name>MariaID</param-name>
+    <param-name>MariaId</param-name>
     <param-value>root</param-value>
   </context-param>
   <!-- 패스워드 -->
@@ -23,6 +23,20 @@
     <param-name>MariaPwd</param-name>
     <param-value>12345</param-value>
   </context-param>
+
+  <!-- Nov 19. 2023. 07:28 추가 : 한글 깨짐 현상 픽스 -->
+  <filter>
+    <filter-name>SetCharEncoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetCharEncoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
   <!-- Nov 17. 2023. 22:55 추가 : 페이징 설정값 -->
   <!-- 한 페이지에 출력할 게시물의 개수 설정 -->

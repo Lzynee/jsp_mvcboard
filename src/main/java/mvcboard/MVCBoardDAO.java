@@ -52,7 +52,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         String query = " "
                 + "SELECT * FROM ( "
                 + " SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, b.* "
-                + " FROM  board b,(SELECT @ROWNUM := 0 ) TMP ";
+                + " FROM  mvcboard b,(SELECT @ROWNUM := 0 ) TMP ";
 
         // 검색 조건이 있다면 WHERE절로 추가
         if (map.get("searchWord") != null) {
@@ -60,7 +60,7 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
                     + " LIKE '%" + map.get("searchWord") + "%' ";
         }
 
-        query += " ORDER BY  num DESC ) T " +
+        query += " ORDER BY idx DESC ) T " +
                 " WHERE ROWNUM BETWEEN ? AND ? ;";  // 게시물 구간은 인파라미터로 설정
 
         try {
@@ -75,16 +75,16 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
                 // 한 행(게시물 하나)의 데이터를 DTO에 저장
                 MVCBoardDTO dto = new MVCBoardDTO();
 
-                dto.setIdx(rs.getString(1));
-                dto.setName(rs.getString(2));
-                dto.setTitle(rs.getString(3));
-                dto.setContent(rs.getString(4));
-                dto.setPostdate(rs.getDate(5));
-                dto.setOfile(rs.getString(6));
-                dto.setSfile(rs.getString(7));
-                dto.setDowncount(rs.getInt(8));
-                dto.setPass(rs.getString(9));
-                dto.setVisitcount(rs.getInt(10));
+                dto.setIdx(rs.getString("idx"));
+                dto.setName(rs.getString("name"));
+                dto.setTitle(rs.getString("title"));
+                dto.setContent(rs.getString("content"));
+                dto.setPostdate(rs.getDate("postdate"));
+                dto.setOfile(rs.getString("ofile"));
+                dto.setSfile(rs.getString("sfile"));
+                dto.setDowncount(rs.getInt("downcount"));
+                dto.setPass(rs.getString("pass"));
+                dto.setVisitcount(rs.getInt("visitcount"));
 
                 // 반환할 결과 목록에 게시물 추가
                 board.add(dto);
