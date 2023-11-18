@@ -98,4 +98,37 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         return board;  // 목록 반환
     }
 
+    /* W(Write) - 글쓰기 기능 구현; 글쓰기 처리 메서드 추가 */
+    // 게시글 데이터를 받아 DB에 추가한다 (파일 업로드 기능 포함)
+    public int insertWrite(MVCBoardDTO dto) {
+        // Write.jsp 에서 전송한 폼값을 서블릿이 받아 DTO에 저장 후 DAO로 전달한다.
+        int result = 0;
+
+        try {
+            // INSERT 쿼리문 작성
+            String query = "INSERT INTO mvcboard ( "
+                    + " name, title, content, ofile, sfile, pass) "
+                    + " VALUES ( "
+                    + " ?, ?, ?, ?, ?, ?)";
+
+            // PreparedStatement 객체 생성 및 인파라미터 설정
+            psmt = con.prepareStatement(query);  // 쿼리문을 인수로 한다.
+            psmt.setString(1, dto.getName());
+            psmt.setString(2, dto.getTitle());
+            psmt.setString(3, dto.getContent());
+            psmt.setString(4, dto.getOfile());
+            psmt.setString(5, dto.getSfile());
+            psmt.setString(6, dto.getPass());
+
+            result = psmt.executeUpdate();  // 쿼리문 실행
+
+        } catch (Exception e) {
+            System.out.println("게시물 입력 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        // 입력된 결과를 서블릿으로 반환
+        return result;
+    }
+
 }  // class
