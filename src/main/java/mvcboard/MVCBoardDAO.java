@@ -193,9 +193,9 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
     * [다운로드] 링크 클릭 시 전달되는 일련번호를 사용하여 업데이트
     *  */
     public void downCountPlus(String idx) {
-        /* 1 */
+        // 일련번호를 인수로 받아 downcount를 1 증가시킨다.
         String sql = "UPDATE mvcboard SET "
-                + " downcount=downcount+1 "  /* 2 */
+                + " downcount=downcount+1 "
                 + " WHERE idx=? ";
 
         try {
@@ -204,7 +204,8 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
             psmt.executeUpdate();
 
         } catch (Exception e) {}
-    }  // downCountPlus
-    
+    }  // downCountPlus()
+    /* Nov 19. 2023. 15:35 추가 완료 */
+
 
 }  // class
