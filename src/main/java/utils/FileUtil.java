@@ -1,5 +1,5 @@
 /**
- * 파일 업로드 및 다운로드를 위한 유틸리티 메서드
+ * 파일 업로드, 다운로드 및 삭제를 위한 유틸리티 메서드
  * */
 
 package utils;
@@ -109,6 +109,19 @@ public class FileUtil {
         }  // try ~ catch
     }  // download()
     /* Nov 19. 16:31 작성 완료 */
+    /* 파일 삭제 메서드 추가 [15d9383] */
+    // 지정한 위치의 파일을 삭제한다.
+    public static void deleteFile(HttpServletRequest req,
+                                  String directory, String filename) {
+        // 파일이 저장된 디렉터리의 물리적 경로를 얻어온다.
+        String sDirectory = req.getServletContext().getRealPath(directory);
+        // 경로와 파일명을 결합하여 파일 객체를 생성한다.
+        File file = new File(sDirectory + File.separator + filename);
 
+        // 경로에 파일이 존재하면 삭제한다.
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 
 }  // class
