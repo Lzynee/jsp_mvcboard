@@ -9,6 +9,7 @@
  * 6. downCountPlus() : 다운로드 횟수를 증가시키는 메서드
  * 7. confirmPassword() : 삭제 시 비밀번호를 확인하는 메서드
  * 8. deletePost() : 지정한 일련번호의 게시물을 삭제하는 메서드
+ * 9. updatePost() : 게시글을 수정하는 메서드
  * */
 
 package mvcboard;
@@ -254,6 +255,38 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         return result;
     }
     /* Nov 19. 2023. 22:46 추가 완료 */
+    /* 수정하기 메서드 추가 [직전 커밋: 1bdc05a] */
+    // 게시글 데이터를 받아 DB에 저장되어 있던 내용을 갱신한다 (파일 업로드 o)
+    public int updatePost(MVCBoardDTO dto) {  // 수정된 내용을 담은 DTO 객체를 매개변수로 받는다.
+
+        int result = 0;
+
+        try {
+            // 쿼리문 템플릿 준비
+            String query = "UPDATE mvcboard"
+                    + " SET title=?, name=?, content=?, ofile=?, sfile=? "
+                    + " WHERE idx=? and pass=?";  // 일련번호와 비밀번호가 모두 일치해야 한다.
+
+            // 쿼리문 준비
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, dto.getTitle());
+            psmt.setString(2, dto.getName());
+            psmt.setString(3, dto.getContent());
+            psmt.setString(4, dto.getOfile());
+            psmt.setString(5, dto.getSfile());
+            psmt.setString(6, dto.getIdx());
+            psmt.setString(7, dto.getPass());
+
+            // 쿼리문 실행
+            result = psmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("게시물 수정 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 
 
 }  // class
