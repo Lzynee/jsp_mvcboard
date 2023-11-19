@@ -7,6 +7,8 @@
  * 4. selectView() : 상세 보기 기능 - 주어진 일련번호에 해당하는 게시물을 DTO로 반환
  * 5. updateVisitCount() : 상세 보기 기능 - 조회수를 증가시킨다.
  * 6. downCountPlus() : 다운로드 횟수를 증가시키는 메서드
+ * 7. confirmPassword() : 삭제 시 비밀번호를 확인하는 메서드
+ * 8. deletePost() : 지정한 일련번호의 게시물을 삭제하는 메서드
  * */
 
 package mvcboard;
@@ -206,6 +208,52 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         } catch (Exception e) {}
     }  // downCountPlus()
     /* Nov 19. 2023. 15:35 추가 완료 */
+    /* Nov 19. 2023. 22:35 추가 : 비밀번호 확인 및 게시물 삭제 메서드 */
+    // 입력한 비밀번호가 지정한 일련번호의 게시물의 비밀번호와 일치하는지 확인한다.
+    public boolean confirmPassword(String pass, String idx) {
+        boolean isCorr = true;
+
+        try {
+            // 비밀번호와 일련번호가 일치하는 게시물의 개수를 세어 비밀번호의 일치 여부를 확인한다.
+            String sql = "SELECT COUNT(*) FROM mvcboard WHERE pass=? AND idx=?";
+            psmt = con.prepareStatement(sql);
+            psmt.setString(1, pass);
+            psmt.setString(2, idx);
+
+            rs = psmt.executeQuery();
+            rs.next();
+
+            // 일치하는 게시물이 없다면 false를 반환
+            if (rs.getInt(1) == 0) {
+                isCorr = false;
+            }
+
+        } catch (Exception e) {
+            isCorr = false;  // 예외가 발생하면 false를 반환
+            e.printStackTrace();
+        }
+
+        return isCorr;
+    }  // confirmPassword()
+
+    // 지정한 일련번호의 게시물을 삭제한다.
+    public int deletePost(String idx) {
+        int result = 0;
+
+        try {
+            String query = "DELETE FROM mvcboard WHERE idx=?";
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, idx);
+            result = psmt.executeUpdate();  // 게시물이 정상적으로 삭제되었다면 1을 반환
+
+        } catch (Exception e) {
+            System.out.println("게시물 삭제 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+    /* Nov 19. 2023. 22:46 추가 완료 */
 
 
 }  // class
