@@ -15,7 +15,6 @@ public class DBConnPool {
     public ResultSet rs;
 
     // 기본 생성자
-    // 기본 생성자
     public DBConnPool() {
         try {
             // 커넥션 풀(DataSource) 얻기

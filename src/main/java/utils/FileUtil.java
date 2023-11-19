@@ -86,7 +86,7 @@ public class FileUtil {
             OutputStream oStream = resp.getOutputStream();
 
             // 출력 스트림에 파일 내용 출력
-            byte b[] = new byte[(int) file.length();
+            byte b[] = new byte[(int) file.length()];
 
             int readBuffer = 0;
 
@@ -94,7 +94,7 @@ public class FileUtil {
                 oStream.write(b, 0, readBuffer);
             }
 
-            // 입/출력 스트림 닫기  /* 10 */
+            // 입/출력 스트림 닫기
             iStream.close();
             oStream.close();
 
