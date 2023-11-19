@@ -5,7 +5,8 @@
  * 2. selectListPage() : 목록 읽기 기능; 페이징 기능
  * 3. insertWrite() : 글쓰기 기능
  * 4. selectView() : 상세 보기 기능 - 주어진 일련번호에 해당하는 게시물을 DTO로 반환
- * 5. () : 상세 보기 기능 - 조회수를 증가시킨다.
+ * 5. updateVisitCount() : 상세 보기 기능 - 조회수를 증가시킨다.
+ * 6. downCountPlus() : 다운로드 횟수를 증가시키는 메서드
  * */
 
 package mvcboard;
@@ -187,4 +188,23 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
         }
 
     }  // updateVisitCount()
+
+    /* Nov 19. 2023. 15:31 추가 : 다운로드 횟수를 증가시키는 메서드
+    * [다운로드] 링크 클릭 시 전달되는 일련번호를 사용하여 업데이트
+    *  */
+    public void downCountPlus(String idx) {
+        /* 1 */
+        String sql = "UPDATE mvcboard SET "
+                + " downcount=downcount+1 "  /* 2 */
+                + " WHERE idx=? ";
+
+        try {
+            psmt = con.prepareStatement(sql);
+            psmt.setString(1, idx);
+            psmt.executeUpdate();
+
+        } catch (Exception e) {}
+    }  // downCountPlus
+    
+
 }  // class
