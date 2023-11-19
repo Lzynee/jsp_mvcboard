@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet("mvcboard/view.do")  // 요청명과 서블릿을 매핑
+// 요청명과 서블릿을 매핑
+@WebServlet("/mvcboard/view.do")
 public class ViewController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)

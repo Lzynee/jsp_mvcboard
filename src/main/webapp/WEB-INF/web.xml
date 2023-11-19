@@ -80,15 +80,7 @@
     <servlet-name>MVCBoardWrite</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
   </servlet-mapping>
-  <!-- 상세 보기 서블릿 매핑 -->
-  <servlet>
-    <servlet-name>MVCBoardView</servlet-name>
-    <servlet-class>mvcboard.ViewController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MVCBoardView</servlet-name>
-    <url-pattern>/mvcboard/view.do</url-pattern>
-  </servlet-mapping>
+  <!-- Nov 19. 2023. 14:33 수정 : 상세 보기 기능에 대한 매핑을 어노테이션으로 구현 -->
   <!-- 다운로드 서블릿 매핑 -->
   <servlet>
     <servlet-name>MVCBoardDownload</servlet-name>
