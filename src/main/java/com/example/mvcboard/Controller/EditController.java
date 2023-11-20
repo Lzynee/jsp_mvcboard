@@ -1,10 +1,12 @@
 /**
  * 수정하기 기능 구현을 위한 서블릿
  * */
-package mvcboard;
+package com.example.mvcboard.Controller;
 
-import utils.FileUtil;
-import utils.JSFunction;
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.FileUtil;
+import com.example.mvcboard.utils.JSFunction;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;

@@ -2,9 +2,11 @@
  * 목록에 대한 서블릿 클래스
  * */
 
-package mvcboard;
+package com.example.mvcboard.Controller;
 
-import utils.BoardPage;
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.BoardPage;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

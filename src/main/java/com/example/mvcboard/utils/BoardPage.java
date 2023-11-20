@@ -2,7 +2,7 @@
  * 페이지 바로가기 영역 HTML 문자열 출력
  * */
 
-package utils;
+package com.example.mvcboard.utils;
 
 public class BoardPage {
     public static String pagingStr(int totalCount, int pageSize, int blockPage,

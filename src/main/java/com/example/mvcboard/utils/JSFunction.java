@@ -4,7 +4,7 @@
  * 기능 성공/실패 여부에 따른 다음 동작을 처리한다.
  * */
 
-package utils;
+package com.example.mvcboard.utils;
 
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.http.HttpServletResponse;

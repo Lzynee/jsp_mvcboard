@@ -5,9 +5,10 @@
  * 다운로드 횟수를 증가시킨다.
  * */
 
-package mvcboard;
+package com.example.mvcboard.Controller;
 
-import utils.FileUtil;
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.utils.FileUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

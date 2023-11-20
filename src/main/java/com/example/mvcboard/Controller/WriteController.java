@@ -4,16 +4,17 @@
  * doPost() 메서드 사용 : 폼값을 받아 DB 처리
  * */
 
-package mvcboard;
+package com.example.mvcboard.Controller;
 
-import utils.FileUtil;
-import utils.JSFunction;
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.FileUtil;
+import com.example.mvcboard.utils.JSFunction;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import java.io.IOException;
 
 public class WriteController extends HttpServlet {

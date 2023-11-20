@@ -12,7 +12,7 @@
  * 9. updatePost() : 게시글을 수정하는 메서드
  * */
 
-package mvcboard;
+package com.example.mvcboard;
 
 import common.DBConnPool;
 

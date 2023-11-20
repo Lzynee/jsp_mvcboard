@@ -1,7 +1,10 @@
 /**
  * 상세보기를 위한 서블릿
  * */
-package mvcboard;
+package com.example.mvcboard.Controller;
+
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.MVCBoardDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

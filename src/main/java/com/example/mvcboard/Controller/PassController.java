@@ -3,10 +3,12 @@
  * 비밀번호 입력 페이지로 이동하기 위한 서블릿
  * 전송된 비밀번호를 확인한 후 삭제 혹은 수정을 하기 위한 서블릿
  * */
-package mvcboard;
+package com.example.mvcboard.Controller;
 
-import utils.FileUtil;
-import utils.JSFunction;
+import com.example.mvcboard.MVCBoardDAO;
+import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.FileUtil;
+import com.example.mvcboard.utils.JSFunction;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -2,7 +2,7 @@
  * 파일 업로드, 다운로드 및 삭제를 위한 유틸리티 메서드
  * */
 
-package utils;
+package com.example.mvcboard.utils;
 
 
 import javax.servlet.ServletException;
