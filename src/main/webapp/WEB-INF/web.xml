@@ -40,15 +40,15 @@
 
   <!-- Nov 17. 2023. 22:55 추가 : 페이징 설정값 -->
   <!-- 한 페이지에 출력할 게시물의 개수 설정 -->
-<!--  <context-param>-->
-<!--    <param-name>POSTS_PER_PAGE</param-name>-->
-<!--    <param-value>10</param-value>-->
-<!--  </context-param>-->
-<!--  &lt;!&ndash; 한 화면에 출력할 페이지 번호의 개수 설정 &ndash;&gt;-->
-<!--  <context-param>-->
-<!--    <param-name>PAGES_PER_BLOCK</param-name>-->
-<!--    <param-value>5</param-value>-->
-<!--  </context-param>-->
+  <context-param>
+    <param-name>POSTS_PER_PAGE</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <!-- 한 화면에 출력할 페이지 번호의 개수 설정 -->
+  <context-param>
+    <param-name>PAGES_PER_BLOCK</param-name>
+    <param-value>5</param-value>
+  </context-param>
   <!-- 페이징 설정값 추가 완료 (22:57) -->
 
   <!-- Nov 17. 2023. 22:27 추가 : 목록 보기 기능에 대한 매핑 -->
