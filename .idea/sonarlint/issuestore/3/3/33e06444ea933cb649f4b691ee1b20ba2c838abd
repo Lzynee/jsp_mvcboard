@@ -1,0 +1,18 @@
+
+{
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(œþç¡ÿÿÿÿÿ8«˜ž‚¿1
+m
+java:S11920"KDefine a constant instead of duplicating this literal "searchWord" 4 times.(ï¨¾Îûÿÿÿÿ8½Ã§ƒ¿1
+‡
+java:S1149F"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(œþç¡ÿÿÿÿÿ8Å˜ž‚¿1
+]	java:S125""<This block of commented-out lines of code should be removed.(Ä¢ëÛûÿÿÿÿ8À§§ƒ¿1
+G	java:S106<"+Replace this use of System.out by a logger.(­™Ÿš8Ê˜ž‚¿1
+F	java:S106s"+Replace this use of System.out by a logger.(¶ÖÀX8Ê˜ž‚¿1
+M	java:S106„"+Replace this use of System.out by a logger.(Õ¶£ôûÿÿÿÿ8ß³³ƒ¿1
+H	java:S106‡"+Replace this use of System.out by a logger.(“ž…÷8—Áµƒ¿1
+^	java:S125Ž"<This block of commented-out lines of code should be removed.(÷Ï®¢ýÿÿÿÿ8›Êˆ…¿1
+M	java:S106Å"+Replace this use of System.out by a logger.(˜šýÿÿÿÿ8®‡¸ƒ¿1
+M	java:S106Ø"+Replace this use of System.out by a logger.(¸ˆ“¡ÿÿÿÿÿ8€‡ƒ…¿1
+K	java:S108ì")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8Í˜ž‚¿1
+M	java:S106–"+Replace this use of System.out by a logger.(ÏÅßŒùÿÿÿÿ8¾Ý‡…¿1
+M	java:S106·"+Replace this use of System.out by a logger.(›ú—ñùÿÿÿÿ8¿Ý‡…¿1

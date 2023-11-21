@@ -14,7 +14,10 @@
 
 package com.example.mvcboard;
 
+import com.example.mvcboard.mybatis.factory.MyBatisSessionFactory;
+import com.example.mvcboard.mybatis.mapper.MVCBoardMapper;
 import common.DBConnPool;
+import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 import java.util.Map;
@@ -28,6 +31,14 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
     /* R(Read) - 목록 읽기 기능 구현 */
     // 검색 조건에 맞는 게시물의 개수를 반환한다 (페이징 x)
     public int selectCount(Map<String, Object> map) {
+//        SqlSession session = MVCBoardSessionFactory.getSqlSession();
+//        MVCBoardMapper mapper = session.getMapper(MVCBoardMapper.class);
+//
+//        int result = mapper.selectCount(map);
+//
+//        System.out.println("selectCount - 행 개수 = " + result);
+//        session.close();
+//        return result;
         int totalCount = 0;
 
         // 쿼리문 준비
@@ -111,34 +122,50 @@ public class MVCBoardDAO extends DBConnPool {  // 커넥션 풀 상속
     /* W(Write) - 글쓰기 기능 구현; 글쓰기 처리 메서드 추가 */
     // 게시글 데이터를 받아 DB에 추가한다 (파일 업로드 기능 포함)
     public int insertWrite(MVCBoardDTO dto) {
-        // Write.jsp 에서 전송한 폼값을 서블릿이 받아 DTO에 저장 후 DAO로 전달한다.
-        int result = 0;
+        /* mybatis로 구현 [직전 커밋: 43c3681]*/
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        MVCBoardMapper mapper = sqlSession.getMapper(MVCBoardMapper.class);
+        int result = mapper.insertWrite(dto);
 
-        try {
-            // INSERT 쿼리문 작성
-            String query = "INSERT INTO mvcboard ( "
-                    + " name, title, content, ofile, sfile, pass) "
-                    + " VALUES ( "
-                    + " ?, ?, ?, ?, ?, ?)";
+        if (result == 1) {
+            sqlSession.commit();
+            System.out.println("새 게시물 저장 성공");
 
-            // PreparedStatement 객체 생성 및 인파라미터 설정
-            psmt = con.prepareStatement(query);  // 쿼리문을 인수로 한다.
-            psmt.setString(1, dto.getName());
-            psmt.setString(2, dto.getTitle());
-            psmt.setString(3, dto.getContent());
-            psmt.setString(4, dto.getOfile());
-            psmt.setString(5, dto.getSfile());
-            psmt.setString(6, dto.getPass());
-
-            result = psmt.executeUpdate();  // 쿼리문 실행
-
-        } catch (Exception e) {
-            System.out.println("게시물 입력 중 예외 발생");
-            e.printStackTrace();
+        } else {
+            System.out.println("새 게시물 저장 실패");
         }
 
-        // 입력된 결과를 서블릿으로 반환
+        sqlSession.close();
         return result;
+
+        // Write.jsp 에서 전송한 폼값을 서블릿이 받아 DTO에 저장 후 DAO로 전달한다.
+//        int result = 0;
+//
+//        try {
+//            // INSERT 쿼리문 작성
+//            String query = "INSERT INTO mvcboard ( "
+//                    + " name, title, content, ofile, sfile, pass) "
+//                    + " VALUES ( "
+//                    + " ?, ?, ?, ?, ?, ?)";
+//
+//            // PreparedStatement 객체 생성 및 인파라미터 설정
+//            psmt = con.prepareStatement(query);  // 쿼리문을 인수로 한다.
+//            psmt.setString(1, dto.getName());
+//            psmt.setString(2, dto.getTitle());
+//            psmt.setString(3, dto.getContent());
+//            psmt.setString(4, dto.getOfile());
+//            psmt.setString(5, dto.getSfile());
+//            psmt.setString(6, dto.getPass());
+//
+//            result = psmt.executeUpdate();  // 쿼리문 실행
+//
+//        } catch (Exception e) {
+//            System.out.println("게시물 입력 중 예외 발생");
+//            e.printStackTrace();
+//        }
+//
+//        // 입력된 결과를 서블릿으로 반환
+//        return result;
     }
 
     /* R(Read) : 주어진 일련번호에 해당하는 게시물을 DTO로 반환한다. */

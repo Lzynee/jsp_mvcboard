@@ -15,7 +15,7 @@ public class MyBatisConfig {
     private SqlSessionFactory sqlSessionFactory = null;
 
     public MyBatisConfig() {
-        String resource = "mybatis/config/mybatis-config.xml";
+        String resource = "com/example/mvcboard/mybatis/config/mybatis-config.xml";
         InputStream inputStream = null;
 
         try {

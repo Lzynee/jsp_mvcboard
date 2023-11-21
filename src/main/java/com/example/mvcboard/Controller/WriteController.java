@@ -12,12 +12,22 @@ import com.example.mvcboard.utils.FileUtil;
 import com.example.mvcboard.utils.JSFunction;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(name = "WriteController", value = "/mvcboard/write.do")
+@MultipartConfig(
+        maxFileSize = 1024 * 1024 * 1,
+        maxRequestSize = 1024 * 1024 * 10
+)
 public class WriteController extends HttpServlet {
+
+    private MVCBoardDAO dao = new MVCBoardDAO();
+
     /* 작성폼으로 진입하기 */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -43,7 +53,7 @@ public class WriteController extends HttpServlet {
         } catch (Exception e) {
             // 파일 업로드에 실패할 경우 경고창을 띄우고 작성 페이지로 재이동한다.
             JSFunction.alertLocation(resp, "파일 업로드 오류입니다.",
-                    "../mvcboard/write.do");
+                    req.getContextPath() + "/mvcboard/write.do");
 
             return;
         }
@@ -58,7 +68,7 @@ public class WriteController extends HttpServlet {
         dto.setPass(req.getParameter("pass"));
 
         // 원본 파일명과 저장된 파일 이름 설정
-        if (originalFileName != "") {  // 업로드 된 파일이 있는지 확인
+        if (originalFileName != null && !originalFileName.equals("")) {  // 업로드 된 파일이 있는지 확인
             // 첨부 파일이 있을 경우 파일명 변경
             String savedFileName = FileUtil.renameFile(saveDirectory,
                     originalFileName);
@@ -69,17 +79,15 @@ public class WriteController extends HttpServlet {
         }
 
         // DAO를 통해 DB에 게시 내용 저장
-        MVCBoardDAO dao = new MVCBoardDAO();
         int result = dao.insertWrite(dto);
-        dao.close();
 
         // 성공, 실패 여부에 따라 처리
         if (result == 1) {  // 글쓰기 성공 => 목록으로 이동
-            resp.sendRedirect("../mvcboard/list.do");
+            resp.sendRedirect(req.getContextPath() + "/mvcboard/list.do");
 
         } else {  // 글쓰기 실패 => 경고창을 띄우고 글쓰기 페이지로 재이동
             JSFunction.alertLocation(resp, "글쓰기에 실패했습니다.",
-                    "../mvcboard/write.do");
+                    req.getContextPath() + "/mvcboard/write.do");
         }
 
     }  // doPost()
