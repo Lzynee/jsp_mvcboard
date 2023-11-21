@@ -130,6 +130,18 @@ public class MVCBoardDAO/* extends DBConnPool*/ {  // 커넥션 풀 상속
 //        return board;  // 목록 반환
     }
 
+    /* 페이징 처리 [직전 커밋 : 90a0f1e] */
+    public List<MVCBoardDTO> selectListPageWithPaging(Map<String, Object> map) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        MVCBoardMapper mapper = sqlSession.getMapper(MVCBoardMapper.class);
+
+        List<MVCBoardDTO> result = mapper.selectListPageWithPaging(map);
+        sqlSession.close();
+
+        return result;
+    }
+
+
     /* W(Write) - 글쓰기 기능 구현; 글쓰기 처리 메서드 추가 */
     // 게시글 데이터를 받아 DB에 추가한다 (파일 업로드 기능 포함)
     public int insertWrite(MVCBoardDTO dto) {

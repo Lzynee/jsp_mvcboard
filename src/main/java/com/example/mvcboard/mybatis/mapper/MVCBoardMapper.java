@@ -11,6 +11,7 @@ public interface MVCBoardMapper {
     int insertWrite(MVCBoardDTO dto);
     int selectCount(Map<String, Object> map);
     List<MVCBoardDTO> selectListPage(Map<String, Object> map);
+    List<MVCBoardDTO> selectListPageWithPaging(Map<String, Object> map);
     MVCBoardDTO selectView(String idx);
     int updateVisitCount(String idx);
     int downCountPlus(String idx);
