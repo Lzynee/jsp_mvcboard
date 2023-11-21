@@ -3,26 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-  <!-- 드라이버 이름 -->
-  <context-param>
-    <param-name>MariaDriver</param-name>
-    <param-value>org.mariadb.jdbc.Driver</param-value>
-  </context-param>
-  <!-- 접속 URL -->
-  <context-param>
-    <param-name>MariaURL</param-name>
-    <param-value>jdbc:mariadb://localhost:3306/mvcboard</param-value>
-  </context-param>
-  <!-- 계정 아이디 -->
-  <context-param>
-    <param-name>MariaId</param-name>
-    <param-value>root</param-value>
-  </context-param>
-  <!-- 패스워드 -->
-  <context-param>
-    <param-name>MariaPwd</param-name>
-    <param-value>12345</param-value>
-  </context-param>
+<!--  &lt;!&ndash; 드라이버 이름 &ndash;&gt;-->
+<!--  <context-param>-->
+<!--    <param-name>MariaDriver</param-name>-->
+<!--    <param-value>org.mariadb.jdbc.Driver</param-value>-->
+<!--  </context-param>-->
+<!--  &lt;!&ndash; 접속 URL &ndash;&gt;-->
+<!--  <context-param>-->
+<!--    <param-name>MariaURL</param-name>-->
+<!--    <param-value>jdbc:mariadb://localhost:3306/mvcboard</param-value>-->
+<!--  </context-param>-->
+<!--  &lt;!&ndash; 계정 아이디 &ndash;&gt;-->
+<!--  <context-param>-->
+<!--    <param-name>MariaId</param-name>-->
+<!--    <param-value>root</param-value>-->
+<!--  </context-param>-->
+<!--  &lt;!&ndash; 패스워드 &ndash;&gt;-->
+<!--  <context-param>-->
+<!--    <param-name>MariaPwd</param-name>-->
+<!--    <param-value>12345</param-value>-->
+<!--  </context-param>-->
 
   <!-- Nov 19. 2023. 07:28 추가 : 한글 깨짐 현상 픽스 -->
   <filter>

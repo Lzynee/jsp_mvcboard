@@ -9,4 +9,52 @@
     INTO mvcboard(name, title, content, ofile, sfile, pass)
     VALUES (#{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
   </insert>
+  <!-- 게시판 읽기 (페이징) 매핑 -->
+  <select id="selectCount" parameterType="map" resultType="int">
+    SELECT COUNT(*) FROM mvcboard
+    <if test="searchWord != null">
+      WHERE searchField LIKE concat('%', #{searchWord}, '%')
+    </if>
+    ORDER BY idx DESC
+  </select>
+  <select id="selectListPage" parameterType="map" resultType="com.example.mvcboard.MVCBoardDTO">
+    SELECT *
+    FROM  mvcboard
+
+    <if test="searchWord != null">
+      WHERE searchField LIKE concat('%', #{searchWord}, '%')
+    </if>
+    ORDER BY idx DESC
+  </select>
+  <select id="selectView" parameterType="String" resultType="com.example.mvcboard.MVCBoardDTO">
+    SELECT *
+    FROM mvcboard
+    WHERE idx = #{idx}
+  </select>
+  <update id="updateVisitCount" parameterType="String">
+    UPDATE mvcboard
+    SET visitcount = visitcount + 1
+    WHERE idx = ${idx}
+  </update>
+  <update id="downCountPlus" parameterType="String">
+    UPDATE mvcboard
+    SET downcount = downcount + 1
+    WHERE idx = ${idx}
+  </update>
+  <select id="confirmPassword" parameterType="map" resultType="int">
+    SELECT COUNT(*)
+    FROM mvcboard
+    WHERE pass = #{pass}
+    AND idx = #{idx}
+  </select>
+  <delete id="deletePost" parameterType="String">
+    DELETE
+    FROM mvcboard
+    WHERE idx = #{idx}
+  </delete>
+  <update id="updatePost" parameterType="com.example.mvcboard.MVCBoardDTO">
+    UPDATE mvcboard
+    SET title = #{title}, name = #{name}, content = #{content}, ofile = #{ofile}, sfile = #{sfile}
+    WHERE idx = #{idx} AND pass = #{pass}
+  </update>
 </mapper>

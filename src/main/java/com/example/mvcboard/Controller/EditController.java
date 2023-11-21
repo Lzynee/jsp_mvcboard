@@ -36,7 +36,7 @@ public class EditController extends HttpServlet {
         MVCBoardDAO dao = new MVCBoardDAO();
         MVCBoardDTO dto = dao.selectView(idx);  // 기존 게시물 내용을 담은 DTO 객체
         req.setAttribute("dto", dto);  // 게시물 일련번호를 DTO 객체의 request 영역에 저장
-        req.getRequestDispatcher("/MVCBoard/Edit.jsp").forward(req, resp);  // Edit.jsp로 포워드
+        req.getRequestDispatcher(req.getContextPath() + "/MVCBoard/Edit.jsp").forward(req, resp);  // Edit.jsp로 포워드
     }
 
     /* 수정하기 서블릿 추가 [직전 커밋: 3169568] */
@@ -83,7 +83,7 @@ public class EditController extends HttpServlet {
         dto.setPass(pass);
 
         // 첨부 파일이 있는 경우 원본 파일명과 저장된 파일 이름 설정
-        if (originalFileName != "") {
+        if (originalFileName != "" && !originalFileName.equals("")) {
             String savedFileName = FileUtil.renameFile(saveDirectory,
                     originalFileName);
 
@@ -102,16 +102,16 @@ public class EditController extends HttpServlet {
         // DB에 수정 내용 반영
         MVCBoardDAO dao = new MVCBoardDAO();
         int result = dao.updatePost(dto);
-        dao.close();
+//        dao.close();
 
         // 성공/실패 여부에 따라 진행
         if (result == 1) {  // 수정 성공
             session.removeAttribute("pass");  // 세션 영역에 저장된 비밀번호 삭제
-            resp.sendRedirect("../mvcboard/view.do?idx=" + idx);  // 상세 보기 뷰로 이동해 수정된 내용을 확인시킨다.
+            resp.sendRedirect(req.getContextPath() + "/mvcboard/view.do?idx=" + idx);  // 상세 보기 뷰로 이동해 수정된 내용을 확인시킨다.
 
         } else {  // 수정 실패
             JSFunction.alertLocation(resp, "비밀번호 검증을 다시 진행해주세요.",
-                    "../mvcboard/view.do?idx=" + idx);  // 상세 보기 페이지에서 다시 비밀번호 검증을 하도록 유도한다.
+                    req.getContextPath() + "/mvcboard/view.do?idx=" + idx);  // 상세 보기 페이지에서 다시 비밀번호 검증을 하도록 유도한다.
 
         }  // if ~ else
     }  // doPost()

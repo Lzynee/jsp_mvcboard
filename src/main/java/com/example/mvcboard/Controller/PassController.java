@@ -40,7 +40,7 @@ public class PassController extends HttpServlet {
         // DAO를 통해 비밀번호가 맞는지 확인한다.
         MVCBoardDAO dao = new MVCBoardDAO();
         boolean confirmed = dao.confirmPassword(pass, idx);
-        dao.close();
+//        dao.close();
 
         if (confirmed) {  // 비밀번호 일치
 
@@ -56,7 +56,7 @@ public class PassController extends HttpServlet {
                 MVCBoardDTO dto = dao.selectView(idx);  // 기존 정보를 보관
 
                 int result = dao.deletePost(idx);  // 게시물 삭제
-                dao.close();
+//                dao.close();
 
                 // 게시물 삭제 성공 시 보관해 둔 정보에서 파일 이름을 찾아 첨부 파일도 삭제
                 if (result == 1) {

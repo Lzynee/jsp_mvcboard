@@ -43,3 +43,15 @@ h
 8src/main/java/com/example/mvcboard/utils/JSFunction.java,7\d\7daead44afb7622abeb8dd2e706c3fe5a53795f3
 }
 Msrc/main/java/com/example/mvcboard/mybatis/factory/MyBatisSessionFactory.java,3\d\3df173c3f1560ff29ae2ad9d2df01d97635e12d6
+q
+Asrc/main/java/com/example/mvcboard/Controller/PassController.java,f\0\f0e5263b24b64bb9163d3fdc3a5000fa953c990a
+>
+sql/tables.sql,5\7\574e409d9dceb8a08a8865e741b8539c1a7aac29
+q
+Asrc/main/java/com/example/mvcboard/Controller/ViewController.java,4\a\4a97997d8165ad41c4f14920bc7e99b3f4f6d69e
+u
+Esrc/main/java/com/example/mvcboard/Controller/DownloadController.java,5\8\58e215df573e6100122e594b8ab1f7afb433e797
+g
+7src/main/java/com/example/mvcboard/utils/BoardPage.java,5\6\567ff48fead61f51852014b94ca5de5c86aee331
+Q
+!src/main/webapp/MVCBoard/Pass.jsp,7\3\73db03892b472ca79c07618b9c5aa7f28c08eeb6

@@ -29,7 +29,7 @@ public class ViewController extends HttpServlet {
 
         // 게시물 내용 가져오기
         MVCBoardDTO dto = dao.selectView(idx);
-        dao.close();
+//        dao.close();
 
         // 줄바꿈 처리 : 일반 텍스트 문서의 줄바꿈 문자(\r\n) => html이 인식하는 줄바꿈 태그(<br>)
         dto.setContent(dto.getContent().replaceAll("\r\n", "<br>"));

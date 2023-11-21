@@ -1,0 +1,9 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×¸òãûÿÿÿÿ
+|
+java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÙÍ´úÿÿÿÿ
+]	java:S125+"<This block of commented-out lines of code should be removed.(èìîúûÿÿÿÿ8‚ôÚ‡¿1
+n
+java:S19893"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÎÆÍúÿÿÿÿ
+]	java:S125;"<This block of commented-out lines of code should be removed.(èìîúûÿÿÿÿ8ƒôÚ‡¿1
+V	java:S125K"<This block of commented-out lines of code should be removed.(Ÿ½à¥şÿÿÿÿ

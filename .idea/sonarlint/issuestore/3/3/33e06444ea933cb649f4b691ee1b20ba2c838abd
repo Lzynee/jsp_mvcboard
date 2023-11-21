@@ -1,18 +1,23 @@
 
-{
-java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(œþç¡ÿÿÿÿÿ8«˜ž‚¿1
-m
-java:S11920"KDefine a constant instead of duplicating this literal "searchWord" 4 times.(ï¨¾Îûÿÿÿÿ8½Ã§ƒ¿1
-‡
-java:S1149F"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(œþç¡ÿÿÿÿÿ8Å˜ž‚¿1
-]	java:S125""<This block of commented-out lines of code should be removed.(Ä¢ëÛûÿÿÿÿ8À§§ƒ¿1
-G	java:S106<"+Replace this use of System.out by a logger.(­™Ÿš8Ê˜ž‚¿1
-F	java:S106s"+Replace this use of System.out by a logger.(¶ÖÀX8Ê˜ž‚¿1
-M	java:S106„"+Replace this use of System.out by a logger.(Õ¶£ôûÿÿÿÿ8ß³³ƒ¿1
-H	java:S106‡"+Replace this use of System.out by a logger.(“ž…÷8—Áµƒ¿1
-^	java:S125Ž"<This block of commented-out lines of code should be removed.(÷Ï®¢ýÿÿÿÿ8›Êˆ…¿1
-M	java:S106Å"+Replace this use of System.out by a logger.(˜šýÿÿÿÿ8®‡¸ƒ¿1
-M	java:S106Ø"+Replace this use of System.out by a logger.(¸ˆ“¡ÿÿÿÿÿ8€‡ƒ…¿1
-K	java:S108ì")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8Í˜ž‚¿1
-M	java:S106–"+Replace this use of System.out by a logger.(ÏÅßŒùÿÿÿÿ8¾Ý‡…¿1
-M	java:S106·"+Replace this use of System.out by a logger.(›ú—ñùÿÿÿÿ8¿Ý‡…¿1
+]	java:S125"<This block of commented-out lines of code should be removed.(üÑ°Ìúÿÿÿÿ8ÀåÖ‡¿1
+L	java:S106("+Replace this use of System.out by a logger.(¬Õµºÿÿÿÿÿ8Ê˜ž‚¿1
+W	java:S125,"<This block of commented-out lines of code should be removed.(­ƒ¬8¯è¼…¿1
+X	java:S125W"<This block of commented-out lines of code should be removed.(¯ÀÞœ8Ô¹Ü…¿1
+M	java:S106"+Replace this use of System.out by a logger.(Õ¶£ôûÿÿÿÿ8®‡¸ƒ¿1
+H	java:S106’"+Replace this use of System.out by a logger.(“ž…÷8€‡ƒ…¿1
+^	java:S125™"<This block of commented-out lines of code should be removed.(÷Ï®¢ýÿÿÿÿ8›Êˆ…¿1
+^	java:S125Å"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8í²î…¿1
+G	java:S106ì"+Replace this use of System.out by a logger.(¥¦­l8éƒñ…¿1
+Y	java:S125ô"<This block of commented-out lines of code should be removed.(¾Ë¶ü8”û†¿1
+G	java:S106"+Replace this use of System.out by a logger.(î³à68—ä‚†¿1
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(¾Ë¶ü8³ï†¿1
+d
+java:S1126¯"AReplace this if-then-else statement by a single return statement.(™¦Ôêøÿÿÿÿ8Äí´†¿1
+^	java:S125¶"<This block of commented-out lines of code should be removed.(Ì…Ê»ýÿÿÿÿ8‡×ª†¿1
+M	java:S106Ø"+Replace this use of System.out by a logger.(Ò´Žÿÿÿÿÿ8¶ï†¿1
+H	java:S106Û"+Replace this use of System.out by a logger.(¸£Ü¢8š–¬†¿1
+^	java:S125á"<This block of commented-out lines of code should be removed.(÷Ï®¢ýÿÿÿÿ8ãÉ»†¿1
+M	java:S106þ"+Replace this use of System.out by a logger.(´¼éÏúÿÿÿÿ8¤Àì†¿1
+^	java:S125„"<This block of commented-out lines of code should be removed.(÷Ï®¢ýÿÿÿÿ8Íÿê†¿1
+O
+java:S1128"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ8ô„×‡¿1

@@ -34,6 +34,6 @@ public class DownloadController extends HttpServlet {
         // 해당 게시물의 다운로드 수 1 증가
         MVCBoardDAO dao = new MVCBoardDAO();
         dao.downCountPlus(idx);
-        dao.close();
+//        dao.close();
     }
 }
