@@ -24,36 +24,8 @@
             border: 1px solid;
             width: 90%;
         }
-        table, tr, th, td {
+        th, td {
             border: 1px solid;
-        }
-        .searchField,
-        .lower-menu {
-            text-align: center;
-        }
-        .colname.idx,
-        .colname.vcount {
-            width: 10%;
-        }
-        .colname.title {
-            width: auto;
-        }
-        .colname.writer,
-        .colname.date {
-            width: 15%;
-        }
-        .colname.file {
-            width: 8%;
-        }
-        .empty-list,
-        .list-not-empty {
-            text-align: center;
-        }
-        .post-title {
-            text-align: left;
-        }
-        .lower-menu-button {
-            width: 100px;
         }
     </style>
 </head>
@@ -66,7 +38,7 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
 <form method="get">
     <table>
         <tr>
-            <td class="searchField">
+            <td style="text-align: center;">
                 <select name="searchField">
                     <option value="title">제목</option>
                     <option value="content">내용</option>
@@ -81,18 +53,18 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
 <%-- 목록 테이블 --%>
 <table>
     <tr>
-        <th class="colname idx">번호</th>
-        <th class="colname title">제목</th>
-        <th class="colname writer">작성자</th>
-        <th class="colname vcount">조회수</th>
-        <th class="colname date">작성일</th>
-        <th class="colname file">첨부</th>
+        <th style="width: 10%;">번호</th>
+        <th style="width: auto;">제목</th>
+        <th style="width: 15%;">작성자</th>
+        <th style="width: 10%;">조회수</th>
+        <th style="width: 15%;">작성일</th>
+        <th style="width: 8%;">첨부</th>
     </tr>
     <c:choose>
       <%-- ListController에서 request 영역에 저장한 값을 받아 온다. --%>
         <c:when test="${ empty boardLists }">  <%-- 게시물이 없을 때 --%>
             <tr>
-                <td class="empty-list" colspan="6">
+                <td colspan="6" style="text-align: center;">
                     등록된 게시물이 없습니다 ☺️
                 </td>
             </tr>
@@ -100,11 +72,11 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
         <c:otherwise>  <%-- 게시물이 있을 때 --%>
           <%-- 게시물이 있으면 목록에 출력할 가상번호를 계산하고, 반복 출력한다. --%>
             <c:forEach items="${ boardLists }" var="row" varStatus="loop">
-                <tr class="list-not-empty">
+                <tr style="text-align: center;">
                     <td>  <%-- 번호 --%>
                             ${ map.totalCount - (((map.pageNum - 1) * map.pageSize) + loop.index) }
                     </td>
-                    <td class="post-title">  <%-- 제목(상세보기 페이지로 바로가기 링크) --%>
+                    <td style="text-align: left;">  <%-- 제목(상세보기 페이지로 바로가기 링크) --%>
                       <%-- 게시물의 일련번호를 매개변수로 사용한다. --%>
                         <a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }</a>
                     </td>
@@ -127,17 +99,16 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
 
 <%-- 하단 메뉴(바로가기, 글쓰기) --%>
 <table>
-  <tr class="lower-menu">
+  <tr style="text-align: center;">
     <td>  <%-- 페이지 바로가기 링크 --%>
       ${ map.pagingImg }
     </td>
-    <td class="lower-menu-button">  <%-- 글쓰기 버튼 --%>
+    <td style="width: 100px;">  <%-- 글쓰기 버튼 --%>
       <button type="button" onclick="location.href='../mvcboard/write.do';">
         글쓰기
       </button>
     </td>
   </tr>
 </table>
-
 </body>
 </html>
