@@ -8,6 +8,6 @@ CREATE TABLE mvcboard(
 	ofile varchar(200) comment "원본 파일명",
 	sfile varchar(30) comment "저장된 파일명",
 	downcount decimal NOT NULL DEFAULT 0 comment "다운로드 횟수",
-	pass varchar(50) NOT NULL comment "비밀번호",
+	pass varchar(200) NOT NULL comment "비밀번호",
 	visitcount decimal NOT NULL DEFAULT 0 comment "조회수"
 );

@@ -8,6 +8,7 @@ package com.example.mvcboard.Controller;
 
 import com.example.mvcboard.MVCBoardDAO;
 import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.Encrypt;
 import com.example.mvcboard.utils.FileUtil;
 import com.example.mvcboard.utils.JSFunction;
 
@@ -65,7 +66,7 @@ public class WriteController extends HttpServlet {
         dto.setName(req.getParameter("name"));
         dto.setTitle(req.getParameter("title"));
         dto.setContent(req.getParameter("content"));
-        dto.setPass(req.getParameter("pass"));
+        dto.setPass(Encrypt.getEncrypt(req.getParameter("pass")));
 
         // 원본 파일명과 저장된 파일 이름 설정
         if (originalFileName != null && !originalFileName.equals("")) {  // 업로드 된 파일이 있는지 확인

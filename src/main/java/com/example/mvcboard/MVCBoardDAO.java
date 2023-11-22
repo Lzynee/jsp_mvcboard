@@ -17,6 +17,7 @@ package com.example.mvcboard;
 import com.example.mvcboard.mybatis.factory.MyBatisSessionFactory;
 import com.example.mvcboard.mybatis.mapper.MVCBoardMapper;
 //import common.DBConnPool;
+import com.example.mvcboard.utils.Encrypt;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.HashMap;
@@ -299,12 +300,13 @@ public class MVCBoardDAO/* extends DBConnPool*/ {  // 커넥션 풀 상속
 //        } catch (Exception e) {}
     }  // downCountPlus()
     /* Nov 19. 2023. 15:35 추가 완료 */
-    /* Nov 19. 2023. 22:35 추가 : 비밀번호 확인 및 게시물 삭제 메서드 */
+    /* Nov 19. 2023. 22:35 추가 : 비밀번호 확인 및 게시물 삭제 메서드
+    * salt 방식의 암호화 기법을 추가 [직전 커밋 : 146c0f3] */
     // 입력한 비밀번호가 지정한 일련번호의 게시물의 비밀번호와 일치하는지 확인한다.
     public boolean confirmPassword(String pass, String idx) {
 
         Map<String, String> map = new HashMap<>();
-        map.put("pass", pass);
+        map.put("pass", Encrypt.getEncrypt(pass));
         map.put("idx", idx);
 
         SqlSession session = MyBatisSessionFactory.getSqlSession();

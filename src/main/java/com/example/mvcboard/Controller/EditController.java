@@ -5,6 +5,7 @@ package com.example.mvcboard.Controller;
 
 import com.example.mvcboard.MVCBoardDAO;
 import com.example.mvcboard.MVCBoardDTO;
+import com.example.mvcboard.utils.Encrypt;
 import com.example.mvcboard.utils.FileUtil;
 import com.example.mvcboard.utils.JSFunction;
 
@@ -72,7 +73,7 @@ public class EditController extends HttpServlet {
 
         // 비밀번호는 session에서 가져온다.
         HttpSession session = req.getSession();
-        String pass = (String) session.getAttribute("pass");
+        String pass =  Encrypt.getEncrypt((String)session.getAttribute("pass"));
 
         // DTO에 저장
         MVCBoardDTO dto = new MVCBoardDTO();
