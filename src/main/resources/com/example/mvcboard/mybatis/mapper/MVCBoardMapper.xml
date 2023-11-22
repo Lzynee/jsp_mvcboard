@@ -18,17 +18,24 @@
     ORDER BY idx DESC
   </select>
   <select id="selectListPage" parameterType="map" resultType="com.example.mvcboard.MVCBoardDTO">
-    SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, Tb.*
-    FROM (
-    SELECT *
-    FROM mvcboard
-    WHERE idx > 0
-    <if test="searchWord != null">
-      WHERE searchField LIKE concat('%', #{searchWord}, '%')
+    <![CDATA[
+        SELECT *
+        FROM mvcboard
+        WHERE idx > 0
+        ]]>
+    <if test="searchWord != null and !searchWord.equals('')">
+      AND
+      <choose>
+        <when test="searchField == 'title'">
+          title LIKE CONCAT('%', #{searchWord}, '%')
+        </when>
+        <otherwise>
+          content LIKE CONCAT('%', #{searchWord}, '%')
+        </otherwise>
+      </choose>
     </if>
-    ) tb, (SELECT @ROWNUM := 0) R
-    ORDER BY idx DESC
-    LIMIT 1, 10
+    order by idx desc
+    LIMIT #{start}, 10
   </select>
 <!--  <select id="selectListPageWithPaging" parameterType="map" resultType="com.example.mvcboard.MVCBoardDTO">-->
 <!--    <![CDATA[-->

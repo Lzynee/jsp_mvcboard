@@ -69,6 +69,7 @@ public class BoardPage {
                 pagingStr += "<a href='" + reqUrl + "?pageNum=" + totalPages
                         + "&searchField"+ "=" + searchField + "&searchWord"
                         + "=" + searchWord + "'>[마지막 페이지]</a>";
+
             } else {
                 pagingStr += "<a href='" + reqUrl + "?pageNum=" + pageTemp
                         + "'>[다음 블록]</a>";
