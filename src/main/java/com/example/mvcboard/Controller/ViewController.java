@@ -43,7 +43,7 @@ public class ViewController extends HttpServlet {
         }
 
 
-        String[] mimeStr = {"png", "jpg", "gif"};  // String 타입 배열에 이미지 확장자들을 저장
+        String[] mimeStr = {"png", "jpg", "jpeg", "gif"};  // String 타입 배열에 이미지 확장자들을 저장
         List<String> mimeList = Arrays.asList(mimeStr);  // 배열을 List 컬렉션으로 변환
 
         // 컬렉션에 포함된 확장자이면 isImage 변수의 값을 true로 변경한다.
