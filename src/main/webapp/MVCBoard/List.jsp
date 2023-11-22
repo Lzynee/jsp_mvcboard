@@ -15,17 +15,17 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>파일 첨부형 게시판</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         a {
             text-display: none;
         }
         table {
-            border: 1px solid;
             width: 90%;
-        }
-        th, td {
-            border: 1px solid;
         }
     </style>
 </head>
@@ -35,31 +35,36 @@
 <%-- 검색 폼 --%>
 <%-- 입력된 검색어는 ListController 서블릿으로 전송된 후
 MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수로 전달된다. --%>
-<form method="get">
-    <table>
+<form method="get" action="/mvcboard/list.do">
+    <table class="table table-borderless">
         <tr>
             <td style="text-align: center;">
-                <select name="searchField">
+                <select class="form-select form-select-sm"
+                        aria-label="Small select example" name="searchField"
+                        style="display: inline-block; width: 100px;">
                     <option value="title">제목</option>
                     <option value="content">내용</option>
                 </select>
                 <input type="text" name="searchWord">
-                <input type="submit" value="검색하기">
+                <input class="btn btn-outline-secondary btn-sm" type="submit" value="검색하기">
             </td>
         </tr>
     </table>
 </form>
 
 <%-- 목록 테이블 --%>
-<table>
-    <tr>
-        <th style="width: 10%;">번호</th>
-        <th style="width: auto;">제목</th>
-        <th style="width: 15%;">작성자</th>
-        <th style="width: 10%;">조회수</th>
-        <th style="width: 15%;">작성일</th>
-        <th style="width: 8%;">첨부</th>
+<table class="table table-hover">
+  <thead class="table-light">
+    <tr style="text-align: center;">
+        <th scope="col" style="width: 10%;">번호</th>
+        <th scope="col" style="width: auto;">제목</th>
+        <th scope="col" style="width: 15%;">작성자</th>
+        <th scope="col" style="width: 10%;">조회수</th>
+        <th scope="col" style="width: 15%;">작성일</th>
+        <th scope="col" style="width: 8%;">첨부</th>
     </tr>
+  </thead>
+  <tbody class="table-group-divider">
     <c:choose>
       <%-- ListController에서 request 영역에 저장한 값을 받아 온다. --%>
         <c:when test="${ empty boardLists }">  <%-- 게시물이 없을 때 --%>
@@ -73,9 +78,9 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
           <%-- 게시물이 있으면 목록에 출력할 가상번호를 계산하고, 반복 출력한다. --%>
             <c:forEach items="${ boardLists }" var="row" varStatus="loop">
                 <tr style="text-align: center;">
-                    <td>  <%-- 번호 --%>
+                    <th scope="row">  <%-- 번호 --%>
                             ${ map.totalCount - (((map.pageNum - 1) * map.pageSize) + loop.index) }
-                    </td>
+                    </th>
                     <td style="text-align: left;">  <%-- 제목(상세보기 페이지로 바로가기 링크) --%>
                       <%-- 게시물의 일련번호를 매개변수로 사용한다. --%>
                         <a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }</a>
@@ -104,7 +109,8 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
       ${ map.pagingImg }
     </td>
     <td style="width: 100px;">  <%-- 글쓰기 버튼 --%>
-      <button type="button" onclick="location.href='../mvcboard/write.do';">
+      <button class="btn btn-dark btn-sm" type="button"
+              onclick="location.href='../mvcboard/write.do';">
         글쓰기
       </button>
     </td>
