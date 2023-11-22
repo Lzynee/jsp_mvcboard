@@ -12,8 +12,16 @@
   <!-- 게시판 읽기 (페이징) 매핑 -->
   <select id="selectCount" parameterType="map" resultType="int">
     SELECT COUNT(*) FROM mvcboard
-    <if test="searchWord != null">
-      WHERE searchField LIKE concat('%', #{searchWord}, '%')
+    <if test="searchWord != null and !searchWord.equals('')">
+      WHERE
+      <choose>
+        <when test="searchField == 'title'">
+          title like concat('%', #{searchWord}, '%')
+        </when>
+        <otherwise>
+          content like concat('%', #{searchWord}, '%')
+        </otherwise>
+      </choose>
     </if>
     ORDER BY idx DESC
   </select>
