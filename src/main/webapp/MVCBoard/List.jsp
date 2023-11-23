@@ -39,14 +39,20 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
     <table class="table table-borderless">
         <tr>
             <td style="text-align: center;">
+              <div class="searchbar"
+                   style="display: flex; justify-content: center;
+                   align-content: center">
                 <select class="form-select form-select-sm"
                         aria-label="Small select example" name="searchField"
-                        style="display: inline-block; width: 100px;">
+                        style="display: inline-block; width: 100px;
+                        margin-right: 0.4em;">
                     <option value="title">제목</option>
                     <option value="content">내용</option>
                 </select>
-                <input type="text" name="searchWord">
+                <input type="text" name="searchWord"
+                       style="width: 40%; margin-right: 0.4em;">
                 <input class="btn btn-outline-secondary btn-sm" type="submit" value="검색하기">
+              </div>
             </td>
         </tr>
     </table>
@@ -83,7 +89,10 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
                     </th>
                     <td style="text-align: left;">  <%-- 제목(상세보기 페이지로 바로가기 링크) --%>
                       <%-- 게시물의 일련번호를 매개변수로 사용한다. --%>
-                        <a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }</a>
+                        <a href="../mvcboard/view.do?idx=${ row.idx }"
+                           style="text-decoration: none; color: black;">
+                            ${ row.title }
+                        </a>
                     </td>
                     <td>${ row.name }</td>  <%-- 작성자 --%>
                     <td>${ row.visitcount }</td>  <%-- 조회수 --%>
@@ -92,8 +101,11 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
                         <c:if test="${ not empty row.ofile }">
                           <%-- 첨부된 파일을 다운로드하기 위한 링크 --%>
                           <%-- 원본 파일명, 저장된 파일명, 일련번호를 매개변수로 사용 --%>
-                            <a href="../mvcboard/download.do?ofile=${ row.ofile }
-                            &sfile=${ row.sfile }&idx=${ row.idx }">[Down]</a>
+                          <button class="btn btn-light btn-sm" type="button"
+                                  onclick="../mvcboard/download.do?ofile=${ row.ofile }
+                                          &sfile=${ row.sfile }&idx=${ row.idx }">
+                            Down
+                          </button>
                         </c:if>
                     </td>
                 </tr>
@@ -106,7 +118,7 @@ MVCBoardDAO 클래스의 selectCount()와 selectListPage() 메서드의 인수�
 <table>
   <tr style="text-align: center;">
     <td>  <%-- 페이지 바로가기 링크 --%>
-      ${ map.pagingImg }
+        ${ map.pagingImg }
     </td>
     <td style="width: 100px;">  <%-- 글쓰기 버튼 --%>
       <button class="btn btn-dark btn-sm" type="button"
