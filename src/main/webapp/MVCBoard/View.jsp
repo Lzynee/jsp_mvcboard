@@ -22,9 +22,11 @@
     
 </head>
 <body>
+<div>
 <h2>파일 첨부형 게시판 - 상세 보기(View)</h2>
+</div>
 
-<table class="table" style="width: 90%">
+<table class="table table-border" style="width: 90%">
     <colgroup>
         <col style="width: 15%" /> <col style="width: 35%" />
         <col style="width: 15%" /> <col style="width: auto" />
@@ -33,18 +35,18 @@
     <%-- 게시글 정보 --%>
     <%-- 서블릿에서 request 영역에 저장한 DTO 객체의 내용을 EL로 출력한다. --%>
     <tr>
-        <td>번호</td> <td>${ dto.idx }</td> <%-- ${ 속성명.멤버변수 }--%>
-        <td>작성자</td> <td>${ dto.name }</td>
+        <th class="table-light">번호</th> <td>${ dto.idx }</td> <%-- ${ 속성명.멤버변수 }--%>
+        <th class="table-light">작성자</th> <td>${ dto.name }</td>
     </tr>
     <tr>
-        <td>작성일</td> <td>${ dto.postdate }</td>
-        <td>조회수</td> <td>${ dto.visitcount }</td>
+        <th class="table-light">작성일</th> <td>${ dto.postdate }</td>
+        <th class="table-light">조회수</th> <td>${ dto.visitcount }</td>
     </tr>
     <tr>
-        <td>제목</td> <td colspan="3">${ dto.title }</td>
+        <th class="table-light">제목</th> <td colspan="3">${ dto.title }</td>
     </tr>
     <tr>
-        <td>내용</td>
+        <th class="table-light">내용</th>
         <td colspan="3" height="100px">${ dto.content }
             <%-- 이미지 첨부 파일이 있다면 <img> 태그를 이용해 이미지를 출력한다. --%>
             <c:if test="${ not empty dto.ofile and isImage eq true }">
@@ -57,17 +59,18 @@
     
     <%-- 첨부 파일 --%>
     <tr>
-        <td>첨부 파일</td>
+        <th class="table-light">첨부 파일</th>
         <td>
             <c:if test="${ not empty dto.ofile }">
-                ${ dto.ofile }
-                <a href="../mvcboard/download.do?ofile=${ dto.ofile }
-                    &sfile=${ dto.sfile }&idx=${ dto.idx }">
-                    [다운로드]
-                </a>
+                    ${ dto.ofile }
+                    <button class="btn btn-light btn-sm" type="button"
+                            onclick="../mvcboard/download.do?ofile=${ dto.ofile }
+                                    &sfile=${ dto.sfile }&idx=${ dto.idx }">
+                        다운로드
+                    </button>
             </c:if>
         </td>
-        <td>다운로드수</td>
+        <th class="table-light">다운로드수</th>
         <td>${ dto.downcount}</td>
     </tr>
     
