@@ -19,16 +19,12 @@
           rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>파일 첨부형 게시판</title>
-    <style>
-        td {
-            border: 1px solid;
-        }
-    </style>
+    
 </head>
 <body>
 <h2>파일 첨부형 게시판 - 상세 보기(View)</h2>
 
-<table style="border: 1px solid; width: 90%">
+<table class="table" style="width: 90%">
     <colgroup>
         <col style="width: 15%" /> <col style="width: 35%" />
         <col style="width: 15%" /> <col style="width: auto" />
@@ -79,17 +75,17 @@
     <tr>
         <td colspan="4" style="text-align: center">
             <%-- 수정하기 및 삭제하기 버튼은 비밀번호 검증 페이지로 이동 --%>
-            <button type="button"
+            <button class="btn btn-outline-secondary btn-sm" type="button"
                     onclick="location.href='../mvcboard/pass.do?' +
                             'mode=edit&idx=${ param.idx }';">
                 수정하기
             </button>
-            <button type="button"
+            <button class="btn btn-outline-secondary btn-sm" type="button"
                     onclick="location.href='../mvcboard/pass.do?' +
                             'mode=delete&idx=${ param.idx }';">
                 삭제하기
             </button>
-            <button type="button"
+            <button class="btn btn-outline-secondary btn-sm" type="button"
                     onclick="location.href='../mvcboard/list.do?';">
                 목록 바로가기
             </button>
