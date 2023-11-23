@@ -12,6 +12,9 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" />
   <title>파일 첨부형 게시판</title>
   <script type="text/javascript">
     function validateForm(form) {  // 필수 항목 입력 확인
@@ -44,11 +47,7 @@
   </script>
   <style>
     table {
-        border: 1px solid;
-        width: 90%;
-    }
-    th, td {
-        border: 1px solid;
+           width: 90%;
     }
   </style>
 </head>
@@ -57,32 +56,39 @@
   <%-- 파일을 첨부할 수 있도록 method와 enctype 속성을 지정 --%>
   <form name="writeFrm" method="post" enctype="multipart/form-data"
         action="../mvcboard/write.do" onsubmit="return validateForm(this);">
-    <table>
+    <table class="table table-bordered">
+      <colgroup>
+        <col style="width: 10%; padding-left: 3em;" /> <col style="width: auto" />
+      </colgroup>
       <tr>
-        <td>작성자</td>
+        <th class="table-light">작성자</th>
         <td><input type="text" name="name" style="width: 150px;"></td>
       </tr>
       <tr>
-        <td>제목</td>
+        <th class="table-light">제목</td>
         <td><input type="text" name="title" style="width: 90%;"></td>
       </tr>
       <tr>
-        <td>내용</td>
+        <th class="table-light">내용</td>
         <td><textarea name="content" style="width: 90%; height: 100px;"></textarea></td>
       </tr>
       <tr>
-        <td>첨부 파일</td>
-        <td><input type="file" name="ofile"></td>  <%-- 파일 선택을 위한 입력 상자 --%>
+        <th class="table-light">첨부 파일</td>
+        <td>
+          <button class="btn btn-light btn-sm">
+            <input type="file" name="ofile">
+          </button>
+       </td>  <%-- 파일 선택을 위한 입력 상자 --%>
       </tr>
       <tr>
-        <td>비밀번호</td>
+        <th class="table-light">비밀번호</td>
         <td><input type="password" name="pass" style="width: 100px;"></td>
       </tr>
       <tr>
         <td colspan="2" style="text-align: center">
-          <button type="submit">작성 완료</button>
-          <button type="reset">RESET</button>
-          <button type="button" onclick="location.href='../mvcboard/list.do';">
+          <button class="btn btn-outline-secondary btn-sm" type="submit">작성 완료</button>
+          <button class="btn btn-outline-secondary btn-sm" type="reset">RESET</button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='../mvcboard/list.do';">
             목록 바로가기
           </button>
         </td>

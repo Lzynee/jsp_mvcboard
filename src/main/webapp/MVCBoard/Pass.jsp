@@ -12,6 +12,9 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <title>파일 첨부형 게시판</title>
   <script type="text/javascript">
     // 비밀번호를 입력했는지 확인한다.
@@ -23,11 +26,6 @@
         }
     }
   </script>
-  <style>
-    td {
-        border: 1px solid;
-    }
-  </style>
 </head>
 <body>
   <h2>파일 첨부형 게시판 - 비밀번호 검증(Pass)</h2>
@@ -36,18 +34,18 @@
     <%-- 삭제 혹은 수정할 게시물의 일련번호와 모드를 hidden 타입 입력상자에 저장한다. --%>
     <input type="hidden" name="idx" value="${ param.idx }">
     <input type="hidden" name="mode" value="${ param.mode }">
-    <table style="border: 1px solid; width: 90%;">
+    <table class="table table-bordered" style="width: 90%;">
       <tr>
-        <td>비밀번호</td>
+        <td class="table-light" style="width: 150px;">비밀번호</td>
         <td>
-          <input type="password" name="pass" style="width: 100px;">
+          <input type="password" name="pass" style="width: 400px;">
         </td>
       </tr>
       <tr>
         <td colspan="2" style="text-align: center">
-          <button type="submit">검증하기</button>
-          <button type="reset">RESET</button>
-          <button type="button" onclick="location.href='../mvcboard/list.do';">
+          <button class="btn btn-outline-secondary btn-sm" type="submit">검증하기</button>
+          <button class="btn btn-outline-secondary btn-sm" type="reset">RESET</button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='../mvcboard/list.do';">
             목록 바로가기
           </button>
         </td>

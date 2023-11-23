@@ -26,7 +26,7 @@
 <h2>파일 첨부형 게시판 - 상세 보기(View)</h2>
 </div>
 
-<table class="table table-border" style="width: 90%">
+<table class="table table-bordered" style="width: 90%">
     <colgroup>
         <col style="width: 15%" /> <col style="width: 35%" />
         <col style="width: 15%" /> <col style="width: auto" />
