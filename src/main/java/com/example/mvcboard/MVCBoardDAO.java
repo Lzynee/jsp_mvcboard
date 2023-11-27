@@ -31,7 +31,7 @@ public class MVCBoardDAO/* extends DBConnPool*/ {  // 커넥션 풀 상속
     }
 
     /* R(Read) - 목록 읽기 기능 구현 */
-    // 검색 조건에 맞는 게시물의 개수를 반환한다 (페이징 x)
+    // 검색 조건에 맞는 게시물의 개수를 반환한다
     public int selectCount(Map<String, Object> map) {
 
         SqlSession session = MyBatisSessionFactory.getSqlSession();
@@ -45,7 +45,6 @@ public class MVCBoardDAO/* extends DBConnPool*/ {  // 커넥션 풀 상속
         return result;
 
     }
-
 
     // 검색 조건에 맞는 게시물 목록을 반환한다 (페이징)
     public List<MVCBoardDTO> selectListPage(Map<String, Object> map) {

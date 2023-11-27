@@ -9,7 +9,7 @@
     INTO mvcboard(name, title, content, ofile, sfile, pass)
     VALUES (#{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
   </insert>
-  <!-- 게시판 읽기 (페이징) 매핑 -->
+  <!-- 게시글 전체 개수를 센다. -->
   <select id="selectCount" parameterType="map" resultType="int">
     SELECT COUNT(*) FROM mvcboard
     <if test="searchWord != null and !searchWord.equals('')">
