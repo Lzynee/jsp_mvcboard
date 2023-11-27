@@ -10,28 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4443494a-7e54-4aec-99d1-343fc976407b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a97997d8165ad41c4f14920bc7e99b3f4f6d69e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/574e409d9dceb8a08a8865e741b8539c1a7aac29" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/58e215df573e6100122e594b8ab1f7afb433e797" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0e5263b24b64bb9163d3fdc3a5000fa953c990a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/a/4a97997d8165ad41c4f14920bc7e99b3f4f6d69e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/7/574e409d9dceb8a08a8865e741b8539c1a7aac29" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/8/58e215df573e6100122e594b8ab1f7afb433e797" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f0e5263b24b64bb9163d3fdc3a5000fa953c990a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0dbe88b3bb28ccfe15455bfb168df76270b383ba" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0dbe88b3bb28ccfe15455bfb168df76270b383ba" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33e06444ea933cb649f4b691ee1b20ba2c838abd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33e06444ea933cb649f4b691ee1b20ba2c838abd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/ea0b5e41b2b916e7fa23e902247d1db2e8801b00" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/ea0b5e41b2b916e7fa23e902247d1db2e8801b00" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5b12759-9ad9-40cf-bd75-0406f51bb6eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b5b12759-9ad9-40cf-bd75-0406f51bb6eb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/DownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/DownloadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/EditController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/PassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/PassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/Controller/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/MVCBoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/MVCBoardDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/mybatis/mapper/MVCBoardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/mybatis/mapper/MVCBoardMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/DBConnPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/DBConnPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/paging/Criteria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mvcboard/paging/PageMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/DBConnPool.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mvcboard/mybatis/mapper/MVCBoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/mvcboard/mybatis/mapper/MVCBoardMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
@@ -72,31 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/apache-tomcat-9/lib/catalina.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sec/Documents/github/team_project/MomChannel&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\lzyn_data\java_data\jsp_data\jsp_project\mvcboard\src\main\java\com\example\mvcboard\utils" />
@@ -211,6 +200,10 @@
       <workItem from="1700540160895" duration="3435000" />
       <workItem from="1700544580604" duration="41000" />
       <workItem from="1700545504584" duration="10243000" />
+      <workItem from="1700750038222" duration="6733000" />
+      <workItem from="1700800235684" duration="104000" />
+      <workItem from="1700811671572" duration="669000" />
+      <workItem from="1701088094647" duration="534000" />
     </task>
     <servers />
   </component>

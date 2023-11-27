@@ -6,8 +6,6 @@ package com.example.mvcboard.Controller;
 
 import com.example.mvcboard.MVCBoardDAO;
 import com.example.mvcboard.MVCBoardDTO;
-import com.example.mvcboard.paging.Criteria;
-import com.example.mvcboard.paging.PageMaker;
 import com.example.mvcboard.utils.BoardPage;
 
 import javax.servlet.ServletContext;
@@ -42,37 +40,6 @@ public class ListController extends HttpServlet {
         }
 
         int totalCount = dao.selectCount(map);  // 게시물 개수
-
-        /* 페이지 처리문 수정 [직전 커밋 : 90a0f1e] */
-//        String pageNum = req.getParameter("pageNum");
-//        Criteria criteria = new Criteria();
-//        int pageNumInt = 1;
-//        if (pageNum != null && !pageNum.equals("")) {
-//            try {
-//                pageNumInt = Integer.parseInt(pageNum.trim());
-//            } catch (Exception e) {
-//                System.out.println("숫자로 변환할 수 없는 pageNum");
-//                // default로 1을 준다.
-//            }
-//        }
-//        criteria.setPageNum(pageNumInt);
-//
-//        map.put("pageNum", (criteria.getPageNum() - 1) * 10);
-//        List<MVCBoardDTO> boardLists = dao.selectListPageWithPaging(map);
-//
-//        System.out.println("boardLists is null? = " + boardLists);
-//        System.out.println("boardLists.size() = " + boardLists != null ? boardLists.size() : "null이기 때문에 size X");
-//        /*
-//         * boardLists is null? = []
-//         * size => 0
-//         * */
-//
-//        PageMaker pageMaker = new PageMaker(criteria, totalCount);
-//        req.setAttribute("pageMaker", pageMaker);
-//        req.setAttribute("boardLists", boardLists);
-//        map.remove("pageNum");
-//        req.setAttribute("map", map);
-//        req.getRequestDispatcher("/MVCBoard/List.jsp").forward(req, resp);
 
         /* 페이지 처리문 (BoardPage 사용) */
         ServletContext application = getServletContext();

@@ -43,26 +43,6 @@
     ORDER BY idx DESC ) T
     WHERE ROWNUM BETWEEN #{start} AND #{end}
   </select>
-<!--  <select id="selectListPageWithPaging" parameterType="map" resultType="com.example.mvcboard.MVCBoardDTO">-->
-<!--    <![CDATA[-->
-<!--        SELECT *-->
-<!--        FROM mvcboard-->
-<!--        WHERE idx > 0-->
-<!--        ]]>-->
-<!--    <if test="searchWord != null and !searchWord.equals('')">-->
-<!--      AND-->
-<!--      <choose>-->
-<!--        <when test="searchField == 'title'">-->
-<!--          title LIKE CONCAT('%', #{searchWord}, '%')-->
-<!--        </when>-->
-<!--        <otherwise>-->
-<!--          content LIKE CONCAT('%', #{searchWord}, '%')-->
-<!--        </otherwise>-->
-<!--      </choose>-->
-<!--    </if>-->
-<!--    order by idx desc-->
-<!--    LIMIT #{pageNum}, 10-->
-<!--  </select>-->
   <select id="selectView" parameterType="String" resultType="com.example.mvcboard.MVCBoardDTO">
     SELECT *
     FROM mvcboard
